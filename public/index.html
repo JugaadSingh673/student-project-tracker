@@ -1,5 +1,52 @@
+```html
 <!doctype html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Workshop readiness</title></head>
-<body><main><h1>Student Project Tracker</h1><p>Readiness check passed. We will build the interface in Session 1.</p></main></body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Project Tracker</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Student Project Tracker</h1>
+    <p>Keep track of your projects and their progress.</p>
+
+    <section aria-labelledby="form-heading">
+      <h2 id="form-heading">Add a project</h2>
+
+      <form id="project-form">
+        <label for="name">Project name</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="e.g. IoT Monitor"
+          required
+        >
+
+        <label for="status">Status</label>
+        <select id="status" name="status">
+          <option value="Not Started">Not Started</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
+        </select>
+
+        <button type="submit">Add Project</button>
+      </form>
+
+      <p id="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Your Projects</h2>
+
+      <p id="empty-state">No projects yet. Add your first project above.</p>
+
+      <ul id="project-list"></ul>
+    </section>
+  </main>
+<script src="/script.js" defer></script>
+</body>
 </html>
+```
